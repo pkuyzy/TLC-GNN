@@ -1,0 +1,12 @@
+torch==1.7.0+cu110
+torch-cluster==1.5.8
+torch-geometric==1.6.1
+torch-scatter==2.0.5
+torch-sparse==0.6.8
+torch-spline-conv==1.2.0
+torchvision==0.8.1+cu110
+numpy==1.18.5
+dionysus==2.0.7
+scikit-learn==0.23.2
+networkx==2.5
+scipy==1.5.4
