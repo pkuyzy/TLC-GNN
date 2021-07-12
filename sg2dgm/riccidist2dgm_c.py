@@ -322,9 +322,7 @@ class graph2pi():
 
     def get_pimg_for_one_edge(self, u, v, hop=2, norm=True, extended_flag = False, resolution=5, descriptor = 'min', cnt = 0):
         try:
-            self.pi_sg[cnt] = self.sg2dgm_accelerate(self.dict_node[u], self.dict_node[v], hop, norm = True, extended_flag = extended_flag, resolution=resolution, descriptor = descriptor).reshape(-1)
-            self.cnt_compute += 1
-            return self.pi_sg[cnt]
+            return self.sg2dgm_accelerate(self.dict_node[u], self.dict_node[v], hop, norm = True, extended_flag = extended_flag, resolution=resolution, descriptor = descriptor).reshape(-1)
         except BaseException:
             return np.zeros([resolution*resolution])
 
