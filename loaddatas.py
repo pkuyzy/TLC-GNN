@@ -9,8 +9,8 @@ import numpy as np
 import scipy.sparse as sp
 from torch_geometric.utils import remove_self_loops
 import torch_geometric.datasets
-#from sg2dgm import riccidist2dgm as sg2dgm
-from sg2dgm import riccidist2dgm_c as sg2dgm
+from sg2dgm import riccidist2dgm as sg2dgm
+#from sg2dgm import riccidist2dgm_c as sg2dgm
 
 def loaddatas(d_name):
     if d_name in ["PPI"]:
@@ -59,8 +59,7 @@ def compute_persistence_image(data, train_edges, train_edges_false, val_edges, v
     if data_name == "computers":
         data_name = "Computers"
 
-    filename = './data/TLCGNN/' + data_name + '_C.npy'
-    #filename = './data/sg2dgm/' + data_name + '_inter_riccidist_acc_hop2_test.npy'
+    filename = './data/TLCGNN/' + data_name + '.npy'
     if os.path.exists(filename):
         return np.load(filename)
     total_edges = np.concatenate(
@@ -98,21 +97,10 @@ def compute_persistence_image(data, train_edges, train_edges_false, val_edges, v
 
     # compute sg2dgm and save in a dict
     pi = sg2dgm.graph2pi(g, ricci_curv=ricci_cur)
-    pi_sg = np.zeros((len(total_edges), 25))
-    for tt in range(len(total_edges)):
-        if tt % 1000 == 0:
-            print(tt)
-        u, v = total_edges[tt]
-        try:
-            pi_sg[tt] = pi.get_pimg_for_one_edge(u, v, hop = hop, norm = True, extended_flag=True,
+    pi.get_pimg_for_all_edges(total_edges, cores=16, hop=hop, norm=True, extended_flag=True,
                                   resolution=5, descriptor='sum')
-        except BaseException:
-            pi_sg[tt] = np.zeros(25)
-    #pi.get_pimg_for_all_edges(total_edges, cores=16, hop=hop, norm=True, extended_flag=True,
-    #                              resolution=5, descriptor='sum')
-    #np.save(filename,pi.pi_sg)
-    np.save(filename, pi_sg)
-    return pi_sg
+    np.save(filename,pi.pi_sg)
+    return pi.pi_sg
 
 def compute_ricci_curvature(data):
     from GraphRicciCurvature.OllivierRicci import OllivierRicci
