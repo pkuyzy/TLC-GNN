@@ -1,6 +1,7 @@
 import numpy as np
 import networkx as nx
 import dionysus as d
+import time
 import sg2dgm.PersistenceImager as pimg
 from sg2dgm.dgformat import *
 from multiprocessing.dummy import Pool as ThreadPool

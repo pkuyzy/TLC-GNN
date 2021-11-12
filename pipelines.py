@@ -75,6 +75,8 @@ pipeline_acc_diff_sum={'TLCGNN':0}
 pipeline_roc_diff={'TLCGNN':[i for i in times]}
 pipeline_roc_diff_sum={'TLCGNN':0}
 
+if not os.path.exists("./scores"):
+    os.mkdir("./scores")
 
 for d_name in d_names:
     f2 = open('scores/pipe_benchmark_' + d_name + '_LP_scores.txt', 'w+')
