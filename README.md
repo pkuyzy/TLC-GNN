@@ -1,6 +1,6 @@
 # TLC-GNN, PDGNN
 
-Implementation for paper [Link Prediction with Persistent Homology: An Interactive View](https://arxiv.org/abs/2102.10255) (ICML 2021, TLC-GNN) and for paper [Neural Approximation of Graph Topological Features](https://arxiv.org/pdf/2201.12032.pdf) (NeurIPS 2022. PDGNN)
+Implementation for paper [Link Prediction with Persistent Homology: An Interactive View](https://arxiv.org/abs/2102.10255) (ICML 2021, TLC-GNN) and for paper [Neural Approximation of Graph Topological Features](https://arxiv.org/pdf/2201.12032.pdf) (NeurIPS 2022, PDGNN)
 
 
 
@@ -85,4 +85,4 @@ python pipelines_LP_GIN.py
 
 ### PDGNN
 
-![poster_PD](D:\研四上\Neurips\poster\poster_PD.png)
+![poster_PD](D:\Github\TLC-GNN\poster_PD.png)
