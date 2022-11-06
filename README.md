@@ -1,4 +1,4 @@
-# TLC-GNN, PDGNN
+# TLC-GNN \& PDGNN
 
 Implementation for paper [Link Prediction with Persistent Homology: An Interactive View](https://arxiv.org/abs/2102.10255) (ICML 2021, TLC-GNN) and for paper [Neural Approximation of Graph Topological Features](https://arxiv.org/pdf/2201.12032.pdf) (NeurIPS 2022, PDGNN)
 
@@ -7,6 +7,17 @@ Implementation for paper [Link Prediction with Persistent Homology: An Interacti
 ## Requirements
 
 Python version is 3.7, and the versions of needed packages are listed in requirements.txt
+
+We also provide a packed environment, which is available at:
+
+[curvGN.tar.gz](https://drive.google.com/file/d/1RXz8sl7UETsalWDZwZZIkolf9glzQXoP/view?usp=share_link)
+
+you can activate the environment with:
+
+```
+tar -xzf curvGN.tar.gz -C curvGN
+source curvGN/bin/activate
+```
 
 
 
@@ -85,4 +96,4 @@ python pipelines_LP_GIN.py
 
 ### PDGNN
 
-![poster_PD](D:\Github\TLC-GNN\poster_PD.png)
+![poster_PD](poster_PD.png)
