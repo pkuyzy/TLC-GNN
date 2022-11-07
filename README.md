@@ -31,6 +31,8 @@ to run the experiments for PubMed, Photo and Computers datasets, the results wil
 
 If you want to run experiments for PPI datasets, you can comment out line 56 in pipelines.py.
 
+For Cora and Citeseer, you can set the dropout in ./baselines/TLC-GNN to 0.8, the results can be a little higher
+
 
 
 ## Setup Cython

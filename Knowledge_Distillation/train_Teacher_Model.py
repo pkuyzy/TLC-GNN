@@ -212,7 +212,7 @@ if __name__ == "__main__":
                 dict_save = pickle.load(f)
             print(evaluate_time())
     '''
-
+    '''
     # evaluate time for large sparse graphs and SBM
     #d_names = ['Cora', 'Citeseer', 'PubMed']
     d_names = ['SBM']
@@ -222,7 +222,7 @@ if __name__ == "__main__":
             dict_save = pickle.load(f)
         print(evaluate_time())
 
-
+    '''
     '''
     # evaluate on transferable
     #model.load_state_dict(torch.load("/home/yzy/GNN/CurvGN-github/Knowledge_Distillation/models/photo.pt"))
@@ -242,7 +242,7 @@ if __name__ == "__main__":
 
 
 
-    '''
+    
     # default training and evaluation
     for epoch in range(epochs):
         Total_train_0 = 0; Total_train_PI = 0; Total_train_samples = 0
@@ -310,5 +310,5 @@ if __name__ == "__main__":
         f.write(str(datetime.datetime.now()) + ": ")
         f.write(total_info)
         f.write("\n")
-    '''
+    
 

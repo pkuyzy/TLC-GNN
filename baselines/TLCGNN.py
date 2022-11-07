@@ -17,6 +17,7 @@ class Net(torch.nn.Module):
         self.linear_1 = torch.nn.Linear(dimension * dimension + 16, dimension * dimension, bias=True)
         self.softmax = Softmax(dim=1)
     def encode(self,data):
+        # can set p = 0.8 for Cora and Citeseer, the results can be higher
         x, edge_index = data.x, data.edge_index
         x = F.dropout(x,p=0.5,training=self.training)
         x = F.relu(self.conv1(x, edge_index))
